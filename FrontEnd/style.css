@@ -16,27 +16,7 @@ FONT SIZE SYSTEM (px)
 }
 
 /* MAIN COLOR: #a5d8ff BLUE CATEGORY
-GREY COLOR: #343a40
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* GENERAL STYLES */
-/*body {
-  font-family: "Inter", sans-serif;
-  color: 343a40;
-  border-bottom: 8px solid #a5d8ff;
-} 
-*/
-
-.searchtext {
-  padding-left: 45px;
-  font-family: sans-serif;
-  color: #a5d8ff;
-}
+GREY COLOR: #495057 */
 
 .wholebar {
   padding-top: 100px;
@@ -45,6 +25,12 @@ GREY COLOR: #343a40
 
 .searchbar {
   padding-top: 10px;
+}
+
+.searchtext {
+  padding-left: 45px;
+  font-family: sans-serif;
+  color: #a5d8ff;
 }
 
 .round {
@@ -58,20 +44,16 @@ GREY COLOR: #343a40
   z-index: 5;
 }
 
-/*.corner {
-  position: relative;
-  top: 3px;
-  left: 310px;
-  height: 20px;
-  width: 20px;
-  z-index: 10;
-  border-radius: 10px;
-  border: none;
-  background: #a5d8ff;
-}*/
-
 .search {
   position: relative;
   width: 300px;
   height: 50px;
 }
+
+/* GENERAL STYLES */
+/*body {
+  font-family: "Inter", sans-serif;
+  color: 343a40;
+  border-bottom: 8px solid #a5d8ff;
+} 
+*/
