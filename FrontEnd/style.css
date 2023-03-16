@@ -6,8 +6,16 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
 /*https://yeun.github.io/open-color/*/
+/*https://fonts.google.com/*/
 
-/* MAIN COLOR: #1971c2
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #495057;
+}
+
+/* MAIN COLOR: #a5d8ff BLUE CATEGORY
 GREY COLOR: #343a40
 
 * {
@@ -20,14 +28,29 @@ GREY COLOR: #343a40
 /*body {
   font-family: "Inter", sans-serif;
   color: 343a40;
-  border-bottom: 8px solid #1971c2;
+  border-bottom: 8px solid #a5d8ff;
 } 
 */
+
+.searchtext {
+  padding-left: 45px;
+  font-family: sans-serif;
+  color: #a5d8ff;
+}
+
+.wholebar {
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.searchbar {
+  padding-top: 10px;
+}
 
 .round {
   width: 100%;
   border-radius: 15px;
-  border: 1px #000 solid;
+  border: 1px #a5d8ff solid;
   padding: 5px 5px 5px 25px;
   position: absolute;
   top: 0;
@@ -35,20 +58,20 @@ GREY COLOR: #343a40
   z-index: 5;
 }
 
-.corner {
-  position: absolute;
+/*.corner {
+  position: relative;
   top: 3px;
-  left: 230px;
+  left: 310px;
   height: 20px;
   width: 20px;
   z-index: 10;
   border-radius: 10px;
   border: none;
-  background: #1971c2; /* Set the bg image here. with "no-repeat" */
-}
+  background: #a5d8ff;
+}*/
 
 .search {
   position: relative;
-  width: 190px;
-  height: 30px;
+  width: 300px;
+  height: 50px;
 }
