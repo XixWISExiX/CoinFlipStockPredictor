@@ -8,31 +8,37 @@ FONT SIZE SYSTEM (px)
 /*https://yeun.github.io/open-color/*/
 /*https://fonts.google.com/*/
 
+/* Resets the Default settings*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #495057;
+  /* background-color: #495057; */
 }
 
 /* MAIN COLOR: #a5d8ff BLUE CATEGORY
 GREY COLOR: #495057 */
 
+/* Text and the search bar for the stock look up */
 .wholebar {
   padding-top: 100px;
   padding-left: 100px;
 }
 
+/* The searchbar */
 .searchbar {
   padding-top: 10px;
 }
 
+/* The search bar text */
 .searchtext {
-  padding-left: 45px;
-  font-family: sans-serif;
+  padding-left: 33px;
+  /* font-family: sans-serif; */
+  font-family: "Rubik", sans-serif;
   color: #a5d8ff;
 }
 
+/* The Search bar display */
 .round {
   width: 100%;
   border-radius: 15px;
@@ -44,6 +50,7 @@ GREY COLOR: #495057 */
   z-index: 5;
 }
 
+/* Search bar dimentions */
 .search {
   position: relative;
   width: 300px;

@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coin Flip Stock Predictor</title>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+    <link
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      html,
+      body,
+      #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-    <form id="search-form">
-      <div class="wholebar">
-        <p class="searchtext">Please enter in a stock symbol</p>
-        <div class="searchbar">
-          <div class="search">
-            <input type="text" name="search" class="round" />
-            <input type="submit" class="corner" value="" />
-          </div>
+    <form id="search-form" class="wholebar">
+      <p class="searchtext">Please enter in a stock symbol</p>
+      <div class="searchbar">
+        <div class="search">
+          <input type="text" name="search" class="round" />
         </div>
       </div>
     </form>
+    <div id="container"></div>
+    <script src="Functionality.js"></script>
   </body>
 </html>
