@@ -8,6 +8,7 @@ class Stock extends React.Component {
       stockChartXValues: [],
       stockChartYValues: [],
     };
+    this.StockSymbol = "AAPL";
   }
 
   componentDidMount() {
@@ -49,15 +50,14 @@ class Stock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Stock Market</h1>
-        <form id="search-form" class="wholebar">
+        {/* <form id="search-form" class="wholebar">
           <p class="searchtext">Please enter in a stock symbol</p>
           <div class="searchbar">
             <div class="search">
               <input type="text" name="search" class="round" />
             </div>
           </div>
-        </form>
+        </form> */}
         <Plot
           data={[
             {
@@ -74,6 +74,7 @@ class Stock extends React.Component {
             title: "A chart",
           }}
         />
+        <p>The prediction is that this stock goes up in price.</p>
       </div>
     );
   }
