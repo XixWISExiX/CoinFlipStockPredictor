@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Plot from "react-plotly.js";
+import Prediction from "./Prediction";
 
-class Stock extends React.Component {
+class Stock extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,14 +12,18 @@ class Stock extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchStock();
+    this.fetchStock(this.props.sign);
   }
 
-  fetchStock() {
-    const pointerToThis = this;
-    console.log(pointerToThis);
+  componentDidUpdate(prevProps) {
+    if (this.props.sign !== prevProps.sign) {
+      this.fetchStock(this.props.sign);
+    }
+  }
+
+  fetchStock(StockSymbol) {
     const API_KEY = "HGJWFG4N8AQ66ICD";
-    let StockSymbol = "AAPL";
+
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
 
     let stockChartXValuesFunction = [];
@@ -28,36 +33,28 @@ class Stock extends React.Component {
       .then(function(response) {
         return response.json();
       })
-      .then(function(data) {
-        console.log(data);
+      .then(
+        function(data) {
+          console.log(data);
 
-        for (var key in data["Time Series (Daily)"]) {
-          stockChartXValuesFunction.push(key);
-          stockChartYValuesFunction.push(
-            data["Time Series (Daily)"][key]["1. open"]
-          );
-        }
+          for (var key in data["Time Series (Daily)"]) {
+            stockChartXValuesFunction.push(key);
+            stockChartYValuesFunction.push(
+              data["Time Series (Daily)"][key]["1. open"]
+            );
+          }
 
-        // console.log(stockChartXValuesFunction);
-        pointerToThis.setState({
-          stockChartXValues: stockChartXValuesFunction,
-          stockChartYValues: stockChartYValuesFunction,
-        });
-      });
+          this.setState({
+            stockChartXValues: stockChartXValuesFunction,
+            stockChartYValues: stockChartYValuesFunction,
+          });
+        }.bind(this)
+      );
   }
 
   render() {
     return (
       <div>
-        <h1>Stock Market</h1>
-        <form id="search-form" class="wholebar">
-          <p class="searchtext">Please enter in a stock symbol</p>
-          <div class="searchbar">
-            <div class="search">
-              <input type="text" name="search" class="round" />
-            </div>
-          </div>
-        </form>
         <Plot
           data={[
             {
@@ -71,7 +68,7 @@ class Stock extends React.Component {
           layout={{
             width: 720,
             height: 440,
-            title: "A chart",
+            title: `${this.props.sign} Chart`,
           }}
         />
       </div>
