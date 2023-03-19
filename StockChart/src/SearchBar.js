@@ -1,32 +1,17 @@
-// import React from "react";
 import React, { useState } from "react";
 import PassText from "./PassText";
 
 function SearchBar({ placeholder }) {
-  const [data, setData] = useState(null);
-  // const [print, setPrint] = useState(false);
-  // const [stockData, setStockData] = useState("AMZN");
-  const [stockData, setStockData] = useState([]);
+  const [data, setData] = useState("");
+  const [stockData, setStockData] = useState("");
 
-  function getData(val) {
-    setData(val.target.value);
-    console.warn(val.target.value);
-  }
+  const setPrediction = (prediction) => {
+    setStockData((prevData) => ({ ...prevData, prediction }));
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // prevent the form from submitting by default
-    setStockData(data);
-    // return <PassText someText="AAPL" />;
-
-    // setPrint();
-    // setData(event.target.data);
-    // console.log("Form submitted with input:", data);
-    // return (
-    //   <div>
-    //     <div>among us</div>
-    //     {/* <PassText someText={data} /> */}
-    //   </div>
-    // );
+    event.preventDefault();
+    setStockData({ symbol: data });
   };
 
   const handleInputChange = (event) => {
@@ -35,17 +20,15 @@ function SearchBar({ placeholder }) {
 
   return (
     <div>
-      <form id="search-form" class="wholebar" onSubmit={handleSubmit}>
+      <form id="search-form" className="wholebar" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder={placeholder}
           value={data}
           onChange={handleInputChange}
         />
-        {/* {print ? <h2>{data}</h2> : null} */}
       </form>
-      {/* <h3>{stockData}</h3> */}
-      <PassText someText={stockData} />
+      <PassText someText={stockData} setPrediction={setPrediction} />
     </div>
   );
 }
