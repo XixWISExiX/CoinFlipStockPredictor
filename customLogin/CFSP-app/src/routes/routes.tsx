@@ -49,10 +49,10 @@ function lazyLoad(
 export default [
   {
     path: "/",
-    element: lazyLoad(import("../pages/Home")),
+    element: lazyLoad(import("../pages/Login"))
   },
   {
     path: "/",
-    element: lazyLoad(import("../pages/Login"))
+    element: lazyLoad(import("../pages/Home")),
   },
 ] as Route[]
