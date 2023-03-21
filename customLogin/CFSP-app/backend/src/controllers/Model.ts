@@ -3,11 +3,40 @@ import createHttpError from "http-errors";
 import mongoose from "mongoose";
 import TestModel from "../models/TestModel";
 
+/* 
+    the whole point of this file is to exactly its name:
+    controlls the model.
+
+    so you can manipulate data, get data, and create data
+    in our database.
+
+*/
+
+// TODO: explain this shit
 interface CreateModelBody {
     title?: string,
     text?: string,
 }
 
+/*
+    this returns EVERY single model that is in our database
+    what the RequestHandler is: its just a function that runs ever time
+    recives a request (like getting data, setting data, etc)
+    takes in a request, response, and next
+    
+    request: what we send to server
+    response: what the server gives back
+    next: executes the next middleware
+    
+    middleware: simply smaller functions that deal with
+    several request to speed up run time and reduce
+    complexity.
+
+    
+
+    what about async? its just a promise
+
+*/ 
 export const getModels: RequestHandler = async (req, res, next) => {
     try {
         const model = await TestModel.find().exec()
