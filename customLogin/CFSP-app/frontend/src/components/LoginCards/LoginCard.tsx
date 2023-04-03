@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { styled, Paper, TextField, Button, Divider } from '@mui/material'
 
 const LoginCardContainer = styled(Paper)(() => ({
@@ -26,7 +27,7 @@ const LoginCard = () => {
         fullWidth
         label={"enter ur password bitch"}
       />
-      <Button variant='contained'>Log in</Button>
+      <Button component={Link} to={'/'} variant='contained'>Log in</Button>
       <Divider flexItem />
       <Button variant='contained' color="success">Create new account</Button>
     </LoginCardContainer>

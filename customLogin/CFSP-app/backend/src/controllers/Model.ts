@@ -12,7 +12,13 @@ import TestModel from "../models/TestModel";
 
 */
 
-// TODO: explain this shit
+/*
+    this is so we can create our own error handler instead
+    of using express.js. this gives us more control over errors
+    and can tell us errors that are more specific and helpful.
+    
+    this is just to narrow down the TYPES of the models we are requesting
+*/
 interface CreateModelBody {
     title?: string,
     text?: string,
@@ -32,7 +38,7 @@ interface CreateModelBody {
     several request to speed up run time and reduce
     complexity.
 
-    
+     
 
     what about async? its just a promise
 
@@ -66,6 +72,8 @@ export const getModel: RequestHandler = async (req, res, next) => {
     }
 }
 
+// as we can see here, our interface is being used to detect empty titles. 
+// params go to -> params(url) | req.body | res.body | next
 export const createModel: RequestHandler<unknown, unknown, CreateModelBody, unknown> = async (req, res, next) => {
     
     const title = req.body.title;

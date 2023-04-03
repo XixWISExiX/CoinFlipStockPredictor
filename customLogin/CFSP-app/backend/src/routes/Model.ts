@@ -7,7 +7,7 @@ import * as ModelController from "../controllers/Model"
 */ 
 
 // created new fuckin router
-// TODO: go more in depth.
+// kinda iamgine like a mini app
 const router = express.Router()
 
 // self explanatory

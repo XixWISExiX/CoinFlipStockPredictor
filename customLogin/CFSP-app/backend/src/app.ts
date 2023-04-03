@@ -4,20 +4,25 @@ import modelRoutes from "./routes/Model"
 import morgan from "morgan"
 import createHttpError, { isHttpError } from "http-errors"
 
-// TODO: explain this shit
+// gives us access to the express functions
+// express is just a back-end framework that helps
+// the client (website) and the server (databases) 
+// communicate. represents the api we are actually gonna make
 const app = express()
 
-// TODO: explain this shit
+// morgan is used to help log errors. you dont really need it, but its just nice to have
+// express.json() just parses incomming requests with JSON. its a middleware. 
+// 
 app.use(morgan("dev"))
 app.use(express.json())
 app.use("/api/models", modelRoutes)
 
-// TODO: explain this shit
+// this is just an error handler in case that a page does not exist in the server
 app.use((req, res, next) => {
     next(createHttpError(404, "page not fuckin found"))
 });
     
-// error handler in case something fucks up.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
     console.log(error)
     let errorMessage = "someting happen"

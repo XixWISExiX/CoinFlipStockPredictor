@@ -4,6 +4,9 @@ import mongoose from "mongoose"
 
 const port = env.PORT;
 
+// node is used to simply run javascript on a server.
+// so we no longer need to write code on a web browser.
+
 mongoose.connect(env.MONGO_CONNECTION_STRING)
     .then(() => {
         console.log("mongooooooooooooooooooose connected")
