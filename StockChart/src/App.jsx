@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Stock from "./Stock";
+import Stock from "./Stock.jsx";
 import SearchBar from "./SearchBar";
 import "./App.css";
 import PassText from "./PassText";
