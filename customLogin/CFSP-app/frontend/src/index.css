@@ -1,0 +1,20 @@
+@font-face {
+  src: '/src/assets/fonts/SF-Pro.ttf';
+  font-family: 'SF Pro', sans-serif;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, div {
+  font-family: 'SF Pro', sans-serif;
+}
+
+* {
+  transition: 0.5s all;
+}
+
+html, body, #root {
+  margin: 0;
+}
+
+#app {
+  background-size: cover;
+}
