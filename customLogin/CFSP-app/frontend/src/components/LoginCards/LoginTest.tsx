@@ -16,7 +16,7 @@ const LoginCardContainer = styled(Paper)(() => ({
   gap: "15px",
 }));
 
-const LoginCard = () => {
+const LoginTest = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -64,4 +64,4 @@ const LoginCard = () => {
 
 }
 
-export default LoginCard
+export default LoginTest
