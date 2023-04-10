@@ -103,4 +103,38 @@ export const createModel: RequestHandler<unknown, unknown, CreateModelBody, unkn
     } catch (error) {
         next(error);
     }
+
+}
+export const loginAuth: RequestHandler<unknown, unknown, CreateModelBody, unknown> = async (req, res) => {
+    const { username, password } = req.body;
+
+  try {
+    // Find user by username in the MongoDB database
+    const user = await UserModel.findOne({ username });
+
+    // If user not found, return error
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Compare entered password with hashed password in the database
+    const passwordMatch = await (password == user.password);
+
+    // If passwords do not match, return error
+    if (!passwordMatch) {
+      return res.status(401).json({ error: 'Invalid password' });
+    }
+
+    // At this point, the login is successful
+    // You can generate and send an access token or session cookie to the client
+    // and take other appropriate actions, such as logging in the user and returning user data
+
+    // Example response with user data
+    return res.status(200).json({ success: 'Logged in successfully', user: user });
+  } catch (err) {
+    // Handle any other errors
+    console.error(err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+
 }
