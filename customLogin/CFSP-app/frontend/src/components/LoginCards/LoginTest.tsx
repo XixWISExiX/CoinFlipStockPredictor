@@ -33,7 +33,7 @@ const LoginCard = () => {
         // Redirect to home page or do other actions upon successful login
       } catch (error) {
         // Handle login error
-        let errorMessage = "Failed to do something exceptional";
+        let errorMessage = "Username/Password is incorrect";
         if (error instanceof Error) {
           errorMessage = error.message;
         }
@@ -44,13 +44,13 @@ const LoginCard = () => {
     <LoginCardContainer>  
       <TextField
         fullWidth
-        label={"username or email bitch"}
+        label={"Enter Username"}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <TextField
         fullWidth
-        label={"enter ur password bitch"}
+        label={"Enter Password"}
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
