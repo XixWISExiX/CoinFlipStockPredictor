@@ -20,5 +20,6 @@ const router = express.Router()
 router.get("/", UserController.getModels)
 router.get("/:modelID", UserController.getModel)
 router.post("/", UserController.createModel)
+router.post("/login", UserController.loginAuth)
 
 export default router
