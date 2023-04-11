@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Router, Navigate} from 'react-router-dom'
 import { styled, Paper, TextField, Button, Divider } from '@mui/material'
 import Axios from 'axios'
 
@@ -24,11 +24,14 @@ const LoginTest = () => {
     const handleLogin = async () => {
       try {
         // Make API request to backend server for login
-        const response = await Axios.post('/login', { username, password });
+        const response = await Axios.post('/test', { username, password });
+        //const response = await Axios.post('/test', UserController.loginAuth({ username, password }));
+
   
         // Handle successful login
         // You can store the authentication state, such as JWT or session information, in your frontend here
         console.log('Logged in successfully!', response.data);
+        return <Navigate replace to="/" />;
   
         // Redirect to home page or do other actions upon successful login
       } catch (error) {
@@ -56,7 +59,7 @@ const LoginTest = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       {error && <p>{error}</p>} {/* Display error message if there is an error */}
-      <Button onCLick={handleLogin} variant='contained'>Log in</Button>
+      <Button onClick={handleLogin} variant='contained'>Log in</Button>
       <Divider flexItem />
       <Button component={Link} to={'/signup'} variant='contained' color="success">Create new account</Button>
     </LoginCardContainer>
