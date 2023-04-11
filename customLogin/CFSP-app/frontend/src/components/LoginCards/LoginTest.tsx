@@ -24,7 +24,7 @@ const LoginTest = () => {
     const handleLogin = async () => {
       try {
         // Make API request to backend server for login
-        const response = await Axios.post('/test', { username, password });
+        const response = await Axios.post("http://localhost:3000/test", { username, password });
 
   
         // Handle successful login
