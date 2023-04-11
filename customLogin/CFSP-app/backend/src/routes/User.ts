@@ -14,12 +14,12 @@ import * as UserController from "../controllers/User"
 
 // created new fuckin router
 // kinda iamgine like a mini app
-const router = express.Router()
+const routerl = express.Router()
 
 // self explanatory
-router.get("/", UserController.getModels)
-router.get("/:modelID", UserController.getModel)
-router.post("/", UserController.createModel)
-router.post("/login", UserController.loginAuth)
+routerl.get("/", UserController.getModels)
+routerl.get("/:modelID", UserController.getModel)
+routerl.post("/", UserController.createModel)
+routerl.post("/test", UserController.loginAuth)
 
-export default router
+export default routerl
