@@ -24,7 +24,7 @@ const LoginTest = () => {
     const handleLogin = async () => {
       try {
         // Make API request to backend server for login
-        const response = await Axios.post("/test", { username, password });
+        const response = await Axios.post("http://localhost:5000/models/test", { username, password });
 
   
         // Handle successful login
@@ -36,10 +36,11 @@ const LoginTest = () => {
       } catch (error) {
         // Handle login error
         let errorMessage = "Username/Password is incorrect";
+        let httperror = "HTTP ERROR"
         if (error instanceof Error) {
-          errorMessage = error.message;
+          httperror = error.message
         }
-        console.log(errorMessage);
+        console.log(errorMessage + httperror);
       }
     };
   return (
