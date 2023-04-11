@@ -56,6 +56,10 @@ export default [
     element: lazyLoad(import("../pages/Test"))
   },
   {
+    path: "/signup",
+    element: lazyLoad(import("../pages/SignupTest"))
+  },
+  {
     path: "/",
     element: lazyLoad(import("../pages/Home")),
     //element: lazyLoad(import("../../../../../StockChart/src/App.jsx")),
