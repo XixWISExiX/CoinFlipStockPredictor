@@ -114,7 +114,7 @@ export const loginAuth: RequestHandler<unknown, unknown, CreateModelBody, unknow
 
     // If user not found, return error
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(403).json({ error: 'User not found' });
     }
 
     // Compare entered password with hashed password in the database
