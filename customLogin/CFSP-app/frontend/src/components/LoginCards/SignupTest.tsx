@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link, Router, Navigate} from 'react-router-dom'
+import React, { useState} from 'react'
+import { Link, Router, useNavigate} from 'react-router-dom'
 import { styled, Paper, TextField, Button, Divider } from '@mui/material'
 import Axios from 'axios'
 
@@ -20,6 +20,13 @@ const SignupTest = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+
+    const history = useNavigate();
+    
+      const redirect = () => {
+        // Redirect to another page
+        history('/test');
+      };
   
     const handleSignup = async () => {
       try {
@@ -30,17 +37,17 @@ const SignupTest = () => {
         // Handle successful login
         // You can store the authentication state, such as JWT or session information, in your frontend here
         console.log('Signed Up Successfully!', response.data);
-        return <Navigate replace to="/"/>;
+        redirect();
   
         // Redirect to home page or do other actions upon successful login
       } catch (error) {
         // Handle login error
-        let errorMessage = "Username/Password is incorrect";
+        let errorMessage = "Check the Username/Password field/s";
         let httperror = "HTTP ERROR"
         if (error instanceof Error) {
           httperror = error.message
         }
-        console.log(errorMessage + httperror);
+        console.log(errorMessage + "\n" + httperror);
       }
     };
   return (
