@@ -25,13 +25,12 @@ const LoginTest = () => {
       try {
         // Make API request to backend server for login
         const response = await Axios.post('/test', { username, password });
-        //const response = await Axios.post('/test', UserController.loginAuth({ username, password }));
 
   
         // Handle successful login
         // You can store the authentication state, such as JWT or session information, in your frontend here
         console.log('Logged in successfully!', response.data);
-        return <Navigate replace to="/" />;
+        return <Navigate replace to="/"/>;
   
         // Redirect to home page or do other actions upon successful login
       } catch (error) {
