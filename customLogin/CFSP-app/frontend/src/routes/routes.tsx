@@ -64,4 +64,8 @@ export default [
     element: lazyLoad(import("../pages/Home")),
     //element: lazyLoad(import("../../../../../StockChart/src/App.jsx")),
   },
+  // {
+  //   path: "/stock",
+  //   element: lazyLoad(import("../CoinFlipStockPredictor/StockChart/src/App"))
+  // },
 ] as Route[]
