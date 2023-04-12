@@ -2,8 +2,6 @@ import "dotenv/config"
 import express, { NextFunction, Request, Response } from "express"
 import morgan from "morgan"
 import createHttpError, { isHttpError } from "http-errors"
-import userRoutes from "./routes/User"
-import cors from "cors"
 
 // gives us access to the express functions
 // express is just a back-end framework that helps
@@ -16,10 +14,8 @@ const app = express()
 app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
-//app.use("/api/models", modelRoutes)
-app.use("/models", userRoutes)
- 
-  
+app.use("/api/models", modelRoutes)
+
 // this is just an error handler in case that a page does not exist in the server
 app.use((req, res, next) => {
     next(createHttpError(404, "page not fuckin found"))
