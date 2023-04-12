@@ -21,11 +21,11 @@ const LoginCard = () => {
     <LoginCardContainer>  
       <TextField
         fullWidth
-        label={"username or email "}
+        label={"username or email bitch"}
       />
       <TextField
         fullWidth
-        label={"enter ur password "}
+        label={"enter ur password bitch"}
       />
       <Button component={Link} to={'/'} variant='contained'>Log in</Button>
       <Divider flexItem />

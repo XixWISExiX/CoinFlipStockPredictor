@@ -10,7 +10,7 @@ function App() {
 
     <Box id="app">
       <RoutesView />
-      Welcome!
+      salam all! whoaa 
     </Box>
 
   )
