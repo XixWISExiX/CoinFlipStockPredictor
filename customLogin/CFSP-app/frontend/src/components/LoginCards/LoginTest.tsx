@@ -25,7 +25,9 @@ const LoginTest = () => {
     
       const redirect = () => {
         // Redirect to another page
-        history('/');
+        //history('/');
+        window.location.href = 'http://localhost:3000/';
+        return null
       };
     
   
