@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
     <div>
-      what the FUCK hello
+      Home Page
     </div>
   )
 
