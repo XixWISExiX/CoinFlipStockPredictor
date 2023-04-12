@@ -68,7 +68,7 @@ const SignupTest = () => {
       {error && <p>{error}</p>} {/* Display error message if there is an error */}
       <Button onClick={handleSignup} variant='contained'>Sign Up</Button>
       <Divider flexItem />
-      <Button component={Link} to={'/login'} variant='contained' color="success">Login</Button>
+      <Button component={Link} to={'/test'} variant='contained' color="success">Login</Button>
     </LoginCardContainer>
   )
 
