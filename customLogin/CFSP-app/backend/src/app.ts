@@ -1,6 +1,5 @@
 import "dotenv/config"
 import express, { NextFunction, Request, Response } from "express"
-import modelRoutes from "./routes/Model"
 import morgan from "morgan"
 import createHttpError, { isHttpError } from "http-errors"
 import userRoutes from "./routes/User"
@@ -14,7 +13,6 @@ const app = express()
 
 // morgan is used to help log errors. you dont really need it, but its just nice to have
 // express.json() just parses incomming requests with JSON. its a middleware. 
-// 
 app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
