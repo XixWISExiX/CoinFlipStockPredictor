@@ -10,7 +10,7 @@ const Signup = () => {
       <Stack>
         <Stack
         minHeight="60%"
-        direction="row"
+        direction="column"
         justifyContent="space-evenly"
         alignItems="center"
         >
@@ -18,6 +18,7 @@ const Signup = () => {
             <Typography
               variant="h3"
               fontWeight="bold"
+              mt={5}
               sx={{
                 width: "max-content",
                 backgroundClip: "text",
@@ -27,13 +28,6 @@ const Signup = () => {
               }}
             >
               CFSP
-            </Typography>
-            <Typography
-            sx={{
-              fontSize: "1.5rem",
-            }}
-            >
-              One of the best tools for beginner stock traders!
             </Typography>
           </Stack>
           <SignupTest />

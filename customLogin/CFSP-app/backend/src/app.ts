@@ -1,6 +1,5 @@
 import "dotenv/config"
 import express, { NextFunction, Request, Response } from "express"
-import modelRoutes from "./routes/Model"
 import morgan from "morgan"
 import createHttpError, { isHttpError } from "http-errors"
 import userRoutes from "./routes/User"

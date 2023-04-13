@@ -52,6 +52,8 @@ const SignupTest = () => {
     };
   return (
     <LoginCardContainer>  
+      create a new account!
+      its quick and easy
       <TextField
         fullWidth
         label={"Enter New Username"}
